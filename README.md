@@ -5,7 +5,7 @@ Một loading screen đẹp mắt và hiện đại cho FiveM server với giao 
 ## Preview
 
 <div align="center">
-  <img src="https://media.discordapp.net/attachments/1385844815069057044/1385844964105257061/image.png" align="center" width="1732" height="856" />
+  <img src="https://media.discordapp.net/attachments/1385844815069057044/1385844964105257061/image.png" align="center"  height="400" />
 </div>
 
 
