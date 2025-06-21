@@ -2,6 +2,13 @@
 
 Một loading screen đẹp mắt và hiện đại cho FiveM server với giao diện tiếng Việt.
 
+## Preview
+
+<div align="center">
+  <img src="https://media.discordapp.net/attachments/1385844815069057044/1385844964105257061/image.png" align="center" width="1732" height="856" />
+</div>
+
+
 ## Tính năng
 
 - 🎨 Giao diện hiện đại với animation mượt mà
