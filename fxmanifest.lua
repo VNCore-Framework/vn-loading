@@ -14,7 +14,6 @@ server_script 'server.lua'
 
 files {
     'html/index.html',
-    'html/test-loading.html',
     'html/css/style.css',
     'html/js/main.js',
     'html/js/config.js',
