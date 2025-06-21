@@ -2,7 +2,6 @@ local spawn1 = false
 local loadingProgress = 0
 local currentStep = 0
 
--- Function để gửi loading progress đến NUI
 function SendLoadingProgress(progress, step)
     SendNUIMessage({
         type = 'loadingProgress',
@@ -13,7 +12,6 @@ function SendLoadingProgress(progress, step)
     })
 end
 
--- Function để gửi loading complete
 function SendLoadingComplete()
     SendNUIMessage({
         type = 'loadingComplete',
@@ -21,7 +19,6 @@ function SendLoadingComplete()
     })
 end
 
--- Thread để simulate loading progress dựa trên thời gian
 Citizen.CreateThread(function()
     local steps = {
         "Đang kết nối server...",
@@ -38,7 +35,6 @@ Citizen.CreateThread(function()
         "Chuẩn bị vào game..."
     }
     
-    -- Đợi một chút để loading screen khởi tạo
     Citizen.Wait(1000)
     
     for i = 0, #steps - 1 do
@@ -47,11 +43,9 @@ Citizen.CreateThread(function()
         local progress = (i / (#steps - 1)) * 90 -- Chỉ đến 90%, 10% cuối để dành cho playerSpawned
         SendLoadingProgress(progress, i)
         
-        -- Đợi random time để tạo hiệu ứng thực tế
         Citizen.Wait(math.random(1000, 3000))
     end
     
-    -- Nếu chưa spawn thì đợi
     while not spawn1 do
         SendLoadingProgress(95, #steps - 1)
         Citizen.Wait(500)
@@ -68,7 +62,6 @@ AddEventHandler("playerSpawned", function ()
     end
 end)
 
--- Thêm các event handlers
 AddEventHandler('onResourceStart', function(resourceName)
     if GetCurrentResourceName() == resourceName then
         print('Loading screen resource started')
