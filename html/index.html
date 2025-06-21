@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VNCORE FRAMEWORK - Loading Screen</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="loadingScreen">
+        <div class="customCursor" id="customCursor"></div>
+        <div class="cursorTrail" id="cursorTrail"></div>
+        
+        <div class="background">
+            <div class="backgroundVideo" id="backgroundVideo"></div>
+        </div>
+
+        <div class="topBar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+                <div class="logoText">
+                    <span class="welcome">Chào mừng bạn đến với</span>
+                    <span class="serverName">VNCORE FRAMEWORK</span>
+                </div>
+            </div>
+            <div class="exitButton">
+                <span>Chúc mọi người có trải nghiệm vui vẻ</span>
+            </div>
+        </div>
+
+        <div class="mainContent">
+            <div class="leftSection">
+                <div class="loadingCircle">
+                    <div class="circle">
+                        <svg class="progressSvg" width="200" height="200">
+                            <circle
+                                cx="100"
+                                cy="100"
+                                r="85"
+                                stroke="#333"
+                                stroke-width="15"
+                                fill="transparent"
+                            />
+                            <circle
+                                cx="100"
+                                cy="100"
+                                r="85"
+                                stroke="url(#progressGradient)"
+                                stroke-width="15"
+                                fill="transparent"
+                                stroke-linecap="round"
+                                stroke-dasharray="534"
+                                stroke-dashoffset="534"
+                                transform="rotate(-90 100 100)"
+                            />
+                            <defs>
+                                <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color: #f31c00; stop-opacity: 1" />
+                                    <stop offset="25%" style="stop-color: #f7e600; stop-opacity: 1" />
+                                    <stop offset="50%" style="stop-color: #00ff88; stop-opacity: 1" />
+                                    <stop offset="75%" style="stop-color: #00ccff; stop-opacity: 1" />
+                                    <stop offset="100%" style="stop-color: #f31c00; stop-opacity: 1" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="circleInner">
+                            <span class="percentage">0%</span>
+                            <span class="dash"></span>
+                        </div>
+                        <div class="innerGlow"></div>
+                    </div>
+                </div>
+
+                <div class="loadingText">
+                    <h2>YOUR GAME IS</h2>
+                    <h1>LOADING</h1>
+                    <p id="currentStep">Đang kết nối server...</p>
+                </div>
+
+                <div class="socialMedia">
+                    <span class="ourSocials">OUR SOCIALS</span>
+                    
+                    <div class="socialIcons" id="socialIcons">
+                    </div>
+                </div>
+
+                <div class="gallery">
+                    <div class="galleryWrapper">
+                        <span class="ourGallery">OUR GALLERY</span>
+                        <div class="galleryContainer">
+                            <div class="galleryImages">
+                                <div class="galleryImage active" style="background-image: url('images/img1.png')"></div>
+                                <div class="galleryImage" style="background-image: url('images/img2.png')"></div>
+                                <div class="galleryImage" style="background-image: url('images/img3.png')"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="centerSection">
+                <div class="musicPlayer">
+                    <div class="musicInfo">
+                        <span id="songTitle">VnCore Theme Song</span>
+                        <span id="artistName">VnCore Music Team</span>
+                    </div>
+                    <div class="musicControls">
+                        <button id="prevTrack"><i class="fas fa-backward"></i></button>
+                        <button id="playPause"><i class="fas fa-play"></i></button>
+                        <button id="nextTrack"><i class="fas fa-forward"></i></button>
+                    </div>
+                    <div class="volumeControl">
+                        <i class="fas fa-volume-up"></i>
+                        <input type="range" id="volumeSlider" min="0" max="100" value="50">
+                    </div>
+                </div>
+
+                <div class="keyboardPanel" style="display: none;">
+                    <div class="keyboardHeader">
+                        <h3>PHÍM TẮT HƯỚNG DẪN</h3>
+                    </div>
+                    <div class="shortcutsList">
+                        <div class="shortcutCategory" id="shortcutsList">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rightSection">
+                <div class="rightTopSection">
+                    <div class="cityIntroduction">
+                        <span class="cityTitle" id="cityTitle">GIỚI THIỆU THÀNH PHỐ</span>
+                        <div class="cityContent">
+                            <h2 class="cityName" id="cityName">VNCORE FRAMEWORK</h2>
+                            <p class="cityDescription" id="cityDescription"></p>
+                            <div class="featuresGrid" id="featuresGrid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rightBottomSection">
+                    <div class="updates">
+                        <span class="updateTitle" id="updateTitle">CẬP NHẬT MỚI NHẤT</span>
+                        <div class="updateList" id="updateList">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footerButtons">
+                <button class="footerButton" id="toggleMusic">
+                    <i class="fas fa-music"></i>
+                    <span>MUSIC</span>
+                </button>
+                <button class="footerButton" id="toggleKeyboard">
+                    <i class="fas fa-keyboard"></i>
+                    <span>KEYBOARD</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
